@@ -9,4 +9,6 @@ public interface AccountService {
     AccountDto getAccountById(Long id);
     //feature-3 Deposit account rest api
     AccountDto deposit(Long id, double amount);
+    //feature-4 withdraw account rest api
+    AccountDto withdraw(long id, double amount);
 }

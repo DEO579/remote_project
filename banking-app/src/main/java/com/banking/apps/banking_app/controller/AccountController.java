@@ -39,8 +39,16 @@ public class AccountController {
     //body raw {"amount" : 5000}
     public ResponseEntity<AccountDto> deposit(@PathVariable Long id, @RequestBody Map<String, Double> request){
        Double amount = request.get("amount");
-        AccountDto accountDto = accountService.deposit(id,amount);
+        AccountDto accountDto = accountService.deposit(id, amount);
         return ResponseEntity.ok(accountDto);
     }
-
+   //feature-4 withdraw account rest api controller method
+   @PutMapping("/{id}/withdraw")
+   //PUT method  url http://localhost:8080/api/accounts/1/withdraw
+   //body raw {"amount" : 5000}
+   public ResponseEntity<AccountDto> withdraw(@PathVariable Long id, @RequestBody Map<String, Double> request){
+       Double amount = request.get("amount");
+       AccountDto accountDto = accountService.deposit(id, amount);
+       return ResponseEntity.ok(accountDto);
+   }
 }
