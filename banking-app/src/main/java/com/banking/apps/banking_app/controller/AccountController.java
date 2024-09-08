@@ -17,8 +17,15 @@ public class AccountController {
     //feature-1 add account rest api controller method
     @PostMapping
     //post method  url http://localhost:8080/api/accounts
-    public ResponseEntity<AccountDto> createAccount(@RequestBody AccountDto accountDto){
+    public ResponseEntity<AccountDto> createAccount(@RequestBody AccountDto accountDto) {
         return new ResponseEntity<>(accountService.createAccount(accountDto), HttpStatus.CREATED);
+    }
+   //feature-2 Get account rest api controller method
+   @GetMapping("/{id}")
+   //Get method  url http://localhost:8080/api/accounts
+    public ResponseEntity<AccountDto> getAccountById(@PathVariable Long id){
+       AccountDto accountDto = accountService.getAccountById(id);
+       return ResponseEntity.ok(accountDto);
 
     }
 }
