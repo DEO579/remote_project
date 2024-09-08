@@ -19,6 +19,6 @@ public class AccountController {
     //post method  url http://localhost:8080/api/accounts
     public ResponseEntity<AccountDto> createAccount(@RequestBody AccountDto accountDto){
         return new ResponseEntity<>(accountService.createAccount(accountDto), HttpStatus.CREATED);
-        
+
     }
 }
