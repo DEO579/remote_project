@@ -29,4 +29,15 @@ public class AccountServiceImpl implements AccountService {
                 .orElseThrow(()-> new RuntimeException("Account does not exist"));
         return AccountMapper.mapToAccountDto(account);
     }
+    //feature-3 Deposit account rest api implementation this method into service impl class
+    @Override
+    public AccountDto deposit(Long id, double amount) {
+        Account account = accountRepository
+                .findById(id)
+                .orElseThrow(()-> new RuntimeException("Account does not exist"));
+        double total = account.getBalance()+amount;
+        account.setBalance(total);
+        Account savedAccount = accountRepository.save(account);
+        return AccountMapper.mapToAccountDto(savedAccount);
+    }
 }

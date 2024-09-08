@@ -7,4 +7,6 @@ public interface AccountService {
     AccountDto createAccount(AccountDto accountDto);
     //feature-2 Get account rest api
     AccountDto getAccountById(Long id);
+    //feature-3 Deposit account rest api
+    AccountDto deposit(Long id, double amount);
 }
