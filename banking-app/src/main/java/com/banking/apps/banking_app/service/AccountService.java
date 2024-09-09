@@ -2,6 +2,8 @@ package com.banking.apps.banking_app.service;
 
 import com.banking.apps.banking_app.dto.AccountDto;
 
+import java.util.List;
+
 public interface AccountService {
     //feature-1 add account rest api
     AccountDto createAccount(AccountDto accountDto);
@@ -11,4 +13,6 @@ public interface AccountService {
     AccountDto deposit(Long id, double amount);
     //feature-4 withdraw account rest api
     AccountDto withdraw(long id, double amount);
+    //feature-5 Get all account rest api
+    List<AccountDto> getAllAccounts();
 }
