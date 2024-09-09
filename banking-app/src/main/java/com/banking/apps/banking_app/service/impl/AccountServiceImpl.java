@@ -45,7 +45,7 @@ public class AccountServiceImpl implements AccountService {
     }
     //feature-4 withdraw account rest api implementation this method into service impl class
     @Override
-    public AccountDto withdraw(long id, double amount) {
+    public AccountDto withdraw(Long id, double amount) {
         Account account = accountRepository
                 .findById(id)
                 .orElseThrow(()-> new RuntimeException("Account does not exist"));
@@ -64,5 +64,13 @@ public class AccountServiceImpl implements AccountService {
         List<Account> accounts = accountRepository.findAll();
         return accounts.stream().map(account -> AccountMapper.mapToAccountDto(account))
                 .collect(Collectors.toList());
+    }
+   //feature-6 delete account rest api implementation this method into service impl class
+    @Override
+    public void deleteAccount(Long id) {
+        Account account = accountRepository
+                .findById(id)
+                .orElseThrow(()-> new RuntimeException("Account does not exist"));
+        accountRepository.deleteById(id);
     }
 }

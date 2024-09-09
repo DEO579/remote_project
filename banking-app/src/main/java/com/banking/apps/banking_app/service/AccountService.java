@@ -12,7 +12,10 @@ public interface AccountService {
     //feature-3 Deposit account rest api
     AccountDto deposit(Long id, double amount);
     //feature-4 withdraw account rest api
-    AccountDto withdraw(long id, double amount);
+    AccountDto withdraw(Long id, double amount);
     //feature-5 Get all account rest api
     List<AccountDto> getAllAccounts();
+    //feature-6 Delete account rest api
+    void deleteAccount(Long id);
+
 }
