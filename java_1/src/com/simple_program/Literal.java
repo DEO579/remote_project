@@ -11,8 +11,14 @@ public static void main(String[] args) {
 	int binaryCount=0b1101;
 	System.out.println(binaryCount);//13
 	char charCount='a';
-	System.out.println(charCount);//13
+	System.out.println(charCount);//a
 	char character='\u0021';
-	System.out.println(character);//13
+	System.out.println(character);//!
+	boolean bool=true;
+	System.out.println(bool);//true
+	String str="deo";
+	System.out.println(str);//deo
+	String str1=null;
+	System.out.println(str1);//null
 }
 }
